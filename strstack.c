@@ -39,14 +39,13 @@ strstack_init(StrStack *const stack, const int SIZE)
 char*
 strstack_push(StrStack *const stack, const char *val)
 {
-    if (stack->size + 1 > stack->SIZE) {
-        int err = strstack_resize(stack, 10);
-        if (err)
+    if (stack->size + 1 > stack->SIZE)
+        if (strstack_resize(stack, 10))
             return NULL;    
-    }
 
-    char *tmp = malloc(sizeof(char) * 50);
-    strncpy(tmp, val, 50);
+    const int len = strlen(val);
+    char *const tmp = malloc(sizeof(char) * len);
+    strncpy(tmp, val, len);
 
     stack->size++; 
     stack->data[stack->size-1] = tmp;
@@ -54,7 +53,7 @@ strstack_push(StrStack *const stack, const char *val)
 }
 
 char*
-strstack_pop(StrStack *stack)
+strstack_pop(StrStack *const stack)
 {
     if (stack->size - 1 < 0)
         return NULL;
@@ -63,26 +62,8 @@ strstack_pop(StrStack *stack)
 }
 
 char*
-strstack_popd(StrStack *stack)
+strstack_popd(StrStack *const stack)
 {
     free(strstack_pop(stack));
     return NULL;
-}
-
-char*
-strstack_get_tail(StrStack *stack)
-{
-    if (!stack->SIZE)
-        return NULL;
-    return stack->data[stack->SIZE-1];
-}
-
-char*
-strstack_set_tail(StrStack *stack, char *val)
-{
-    if (!stack->SIZE)
-        return NULL;
-    char *tmp = stack->data[stack->SIZE-1];
-    stack->data[stack->SIZE-1] = val;
-    return tmp;
 }
