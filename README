@@ -1,0 +1,48 @@
+xmldump - Lightweight, Fast and Fault Tolerant XML Dumper 
+          for the Console and Unix Pipeline
+
+Pipe in any XML you have and it prints a very well parsable and human readable
+represention of the very same.
+
+Dependencies
+------------
+A decent C99 compiler, 'make' and 'expat' library. The tool aims to be posix
+compliant.
+
+Compile
+-------
+Adapt the 'Makefile' to your situation.
+
+> make
+
+Install
+-------
+Copy the 'xmldump' executable to a folder where $PATH is pointing to.
+
+Run
+---
+> cat test/test.xml | ./xmldump
+  /doc
+  /doc/A
+  /doc/A/Aa/@atr_Aa	    cont_Aa
+  /doc/A/Aa
+  /doc/A/Ab/@atr_Ab	    cont_Ab
+  /doc/A/Ab
+  /doc/A/Ac/@atr_Ac	    cont_Ac
+  /doc/A/Ac
+  /doc/B
+  /doc/B/Ba/@atr_Ba	    cont_Ba
+  /doc/B/Ba
+  /doc/B/Bb/@atr_Bb	    cont_Bb
+  /doc/B/Bb
+  /doc/B/Bc/@atr_Bc	    cont_Bc
+  /doc/B/Bc
+  /doc/C
+  /doc/D
+
+Todo
+----
+ * CDATA output
+ * commandline options like separator, usage, content truncation, ...
+ * unicode support
+ * helpful error output 

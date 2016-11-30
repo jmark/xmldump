@@ -1,0 +1,16 @@
+<doc>
+    <A>
+        <Aa atr_Aa="cont_Aa"> foo </Aa>
+        <Ab atr_Ab="cont_Ab"> foo </Ab>
+        <Ac atr_Ac="cont_Ac"> foo </Ac>
+    </A>
+    <B>
+        <Ba atr_Ba="cont_Ba"> foo </Ba>
+        <Bb atr_Bb="cont_Bb"> foo </Bb>
+        <Bc atr_Bc="cont_Bc"> foo </Bc>
+    </B>
+
+    <C/>
+
+    <D> Content only. </d>
+</doc>
