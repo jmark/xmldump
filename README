@@ -45,4 +45,3 @@ Todo
  * CDATA output
  * commandline options like separator, usage, content truncation, ...
  * unicode support
- * helpful error output 
