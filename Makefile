@@ -5,13 +5,10 @@ LDDFLAGS    = -lexpat
 
 all: xmldump
 
-strstack.o: strstack.c strstack.h
-	$(CC) $(CCFLAGS) $(INCFLAGS) $(LDDFLAGS) -c $<
-
-xmldump: xmldump.c strstack.o
-	$(CC) $(CCFLAGS) $(INCFLAGS) $(LDDFLAGS) -o $@ $^
+xmldump: xmldump.c strstack.h
+	$(CC) $(CCFLAGS) $(INCFLAGS) $(LDDFLAGS) -o $@ $<
 
 clear:
-	rm -vf strstack.o xmldump
+	rm -vf xmldump
 
 .PHONY: all clear

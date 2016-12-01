@@ -10,7 +10,10 @@
         <Bc atr_Bc="cont_Bc"> foo </Bc>
     </B>
 
+    <fweroaerlwer wer="werewr" />
     <C/>
 
-    <D> Content only. </d>
+    <D> Content only. </D>
+
+    <foaerlwer_wer />
 </doc>
